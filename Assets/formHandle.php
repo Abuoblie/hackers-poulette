@@ -1,4 +1,19 @@
-<?php 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Assets/style.css">
+        <title>hackers-poulette</title>
+</head>
+
+<body>
+        <?php 
+           require_once "phpHeader.php"; 
+        ?>
+        <?php 
     $regex = "/^[a-zA-Z\s]+$/";
     $regex2 = "/^[a-zA-Z\s\d\.]+$/";
     
@@ -44,6 +59,7 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])){
     $subject = $_POST['subject'];
     
     if(isset($firstName) &&  isset($lastName) && isset($country) && isset($message) && isset($email)){
+           echo "form successfully sent";
                 $headers = array(
                   'From' => 'abu.oblie@gmail.com',
                   'Reply-To' => 'abu.oblie@gmail.com',
@@ -54,10 +70,13 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])){
     }
     
 }
-
-       
-
-
-
     
 ?>
+        <?php 
+           require_once "phpFooter.php";
+        ?>
+
+        <script src="script.js"></script>
+</body>
+
+</html>

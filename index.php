@@ -6,8 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../Assets/style.css">
-
-        <title></title>
+        <title>hackers-poulette</title>
 </head>
 
 <body>
@@ -60,7 +59,7 @@
            require_once "Assets/phpFooter.php";
         ?>
 
-        <script src="./Assets/script.js"></script>
+        <script src="Assets/script.js"></script>
 </body>
 
 </html>
