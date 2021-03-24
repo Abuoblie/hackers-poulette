@@ -46,9 +46,16 @@
                                 </p>
                                 <textarea name="message" id="msg" cols="30" rows="10" placeholder="message"
                                         required="required"></textarea>
-                                <?php if(isset($_GET['message'])){echo "the message contains an illicit character(s)";}?>
                                 <input id="website" name="website" type="text" value="" style="display: none;">
                                 <p><input type="submit" value="submit" name="submit" class='submit' id="submit"></p>
+                                <?php 
+                                   if (empty($_GET['fname']) && empty($_GET['lname']) && empty($_GET['country']) && empty($_GET['email'])) {
+                                           echo " message successfully sent";
+                                   }
+                                   else {
+                                        echo " message was not sent please correct the mistakes and resubmit";
+                                   }
+                                ?>
 
                         </fieldset>
                 </form>

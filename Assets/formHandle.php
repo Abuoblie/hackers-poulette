@@ -40,14 +40,8 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])){
         header("Location: ../index.php?country= invalid");
         exit();
     }
-    if (preg_match($regex2,$_POST['message'])) {
-        $message = trim(filter_var($_POST['message'], FILTER_SANITIZE_STRING));
-        $message = wordwrap($message, 70, "\r\n");
-    }
-    else{
-        header("Location: ../index.php?message= invalid");
-        exit();
-    }
+    
+    
     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));  
     }
@@ -55,11 +49,14 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])){
         header("Location: ../index.php?email= invalid");
         exit();
     }
+    
     $gender = $_POST['gender'];
     $subject = $_POST['subject'];
+    $message = trim(filter_var($_POST['message'], FILTER_SANITIZE_STRING));
+    $message = escapeshellarg($message);
     
     if(isset($firstName) &&  isset($lastName) && isset($country) && isset($message) && isset($email)){
-           echo "form successfully sent";
+          
                 $headers = array(
                   'From' => 'abu.oblie@gmail.com',
                   'Reply-To' => 'abu.oblie@gmail.com',
