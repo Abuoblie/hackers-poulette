@@ -55,7 +55,4 @@
            require_once "Assets/phpFooter.php";
         ?>
 
-        <script src="Assets/script.js"></script>
-</body>
-
-</html>
+  
