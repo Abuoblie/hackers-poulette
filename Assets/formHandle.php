@@ -55,13 +55,14 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])){
     $message = trim(filter_var($_POST['message'], FILTER_SANITIZE_STRING));
     $message = escapeshellarg($message);
     
+    
     if(isset($firstName) &&  isset($lastName) && isset($country) && isset($message) && isset($email)){
           
                 $headers = array(
                   'From' => 'abu.oblie@gmail.com',
                   'Reply-To' => 'abu.oblie@gmail.com',
                 );
-                $msg = "dear customer\r\n"."we have receive your message and we will get back to Asap";
+                $msg = "dear customer\r\n"."we have receive your message and we will get back to you Asap";
               
               mail($email, $subject, $msg, $headers); 
     }
